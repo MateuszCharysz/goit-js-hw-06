@@ -1,7 +1,12 @@
 'use strict';
 const categoryNumberSelector = document.querySelectorAll('li.item');
-const category = document.querySelectorAll(".item")
+
+const body =document.
+
 const categoryNames = document.querySelectorAll('h2');
+console.log(categoryNumberSelector.childrenNodes);
+console.log(categoryNames)
+console.log([...categoryNumberSelector])
 
 const numberOfCategories = () => {
   let number = categoryNumberSelector.length;
@@ -12,7 +17,8 @@ const numberOfCategories = () => {
 
 
 const namesAndElements = () => {
-    {[...categoryNumberSelector]}
+  const categoryName = document.querySelector("h2")
+const elementsList = c
 
 };
 
