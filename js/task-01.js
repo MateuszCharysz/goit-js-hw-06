@@ -1,12 +1,19 @@
 'use strict';
-const categoryNumberSelector = document.querySelectorAll('li.item');
-
-const body =document.
+const categoriesList = document.getElementById('categories');
+console.log(categoriesList);
+const categoryNumberSelector = categoriesList.querySelectorAll('li.item');
+console.log(categoryNumberSelector);
+console.log(categoryNumberSelector.childrenNodes); //undefined - childrenNodes zwraca wartości TYLKO dla pojedynczego elementu, a nie dla grupy
+// const catNumSelArray = [...categoryNumberSelector];
+// console.log(catNumSelArray) // zwraca jako prawdziwy array
+// console.log(catNumSelArray[0]) // zwraca wartość li.item ze wszystkimi pozostałymi elementami we wnętrzu
+// console.log(catNumSelArray[0].childNodes); // tworzy pseudoarray dla wszystkich elementów w POJEDYNECZEJ wartości li.item
+// console.log(categoryNumberSelector[0].childNodes) // również tworzy psudoarray tak sam jak z prawdziwego array
 
 const categoryNames = document.querySelectorAll('h2');
-console.log(categoryNumberSelector.childrenNodes);
-console.log(categoryNames)
-console.log([...categoryNumberSelector])
+console.log(categoryNames); // zwraca tylko nagłówki bez tekstu.
+console.log(categoryNames.textContent); // zwraca undefinded - musi mieć pojedyncze elementy.
+console.log(categoryNames[0].textContent); //zwraca tekst pojedynczego nagłówka
 
 const numberOfCategories = () => {
   let number = categoryNumberSelector.length;
@@ -14,12 +21,27 @@ const numberOfCategories = () => {
   return console.log(messege);
 };
 
-
-
 const namesAndElements = () => {
-  const categoryName = document.querySelector("h2")
-const elementsList = c
-
+  const catNumSelArray = [...categoryNumberSelector];
+  let messegeOne = "";
+  let messegeTwo = "";
+  catNumSelArray.forEach(listItem => {
+    let listItemArray = [...listItem.childNodes];
+    console.log(listItemArray);
+    listItemArray.forEach((simpleElements, index) => {
+      console.log(typeof simpleElements)
+      if (simpleElements == 'h2') {
+        console.log(simpleElements[index].textContent);
+        messegeOne = `Category: ${simpleElements[index].textContent}`
+      } else if (simpleElements == 'ul') {
+       console.log(simpleElements.children.length);
+        messegeTwo = `Elements: ${simpleElements.children.length}`;
+      };
+    })
+    console.log(messegeOne)
+    console.log(messegeTwo);
+  });
 };
 
 numberOfCategories();
+namesAndElements();
