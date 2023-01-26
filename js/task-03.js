@@ -1,3 +1,4 @@
+'use strict';
 const images = [
   {
     url: 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
@@ -32,7 +33,8 @@ const makeGallery = () => {
   // gallery.style.display = 'flex';
   // gallery.style.listStyleType = 'none';
   // gallery.style.flexWrap = "wrap"
-  gallery.style.cssText = "display: flex; list-style-type: none; flex-wrap: wrap"
+  gallery.style.cssText =
+    'display: flex; list-style-type: none; flex-wrap: wrap';
 };
 
 makeGallery();
