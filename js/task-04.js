@@ -27,6 +27,11 @@ log(btnDec);
 const btnInc = counterDivArr[2];
 log(btnInc);
 
+//SECOND WAY OF DOM TARGETING
+// const btnPlus = document.querySelector('button[data-action="decrement"]');
+// log(btnPlus);
+// const btnMinus = document.querySelector('button[data-action="increment"]');
+
 //callbacks
 const display = () => (counterDisplay.innerHTML = counterValue);
 const increment = Event => {
@@ -43,4 +48,3 @@ const decrement = Event => {
 // Event listeners
 btnDec.addEventListener('click', decrement);
 btnInc.addEventListener('click', increment);
-
