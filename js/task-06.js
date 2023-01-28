@@ -9,7 +9,7 @@ log(input);
 const inputLength = input.value;
 log(typeof input.getAttribute('data-length'));
 
-//callback
+//callback/functions
 const inputlengthVal = () => {
   // log(input.value);
   const inputStr = input.value;
