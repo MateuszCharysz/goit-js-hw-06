@@ -4,13 +4,26 @@
 const log = console.log;
 
 //DOM elements
-const form = document.querySelector('.login');
-log(input);
-const inputLength = input.value;
-log(typeof input.getAttribute('data-length'));
+const form = document.querySelector('.login-form');
+// log(form);
 
 //callback/functions
-
+const handleSubmit = Event => {
+  Event.preventDefault();
+  const {
+    elements: { email, password },
+  } = Event.currentTarget;
+  let loginData = {};
+//   log(email);
+//   log(password);
+  if (email.value === '' || password.value === '') {
+    alert('Please fill in all fields');
+  } else {
+    loginData.email = email.value;
+    loginData.password = password.value;
+    return log(loginData);
+  }
+};
 
 //Event
-// input.addEventListener('blur', inputlengthVal);
+form.addEventListener('submit', handleSubmit);
