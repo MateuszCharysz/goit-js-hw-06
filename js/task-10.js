@@ -8,22 +8,31 @@ function getRandomHexColor() {
 const log = console.log;
 
 //DOM elements
-const btnCreate = document.querySelector('button[data-create]');
+const btnCreate = document.querySelector('[data-create]');
 const btnDestr = document.querySelector('[data-destroy');
-// log(btnCreate)
+log(btnCreate);
 const boxContainer = document.querySelector('#boxes');
 const input = document.querySelector('input');
 // log(input)
 const divs = boxContainer.querySelectorAll('div');
-log(divs);
+// log(divs);
+
+// log(input.valueAsNumber);
+
 //callback/functions
 const createBoxes = amount => {
-  let pxDim = 20;
-  for (let i = 0; i < amount; i++) {
-    pxDim += 10;
-    let markup = `<div style="background-color:${getRandomHexColor}; width:${pxDim}px; height${pxDim}px"></div>`;
-    boxContainer.insertAdjacentHTML('beforeend', markup);
-  }
+  amount = input.valueAsNumber;
+  log(amount);
+  const arr = Array(amount);
+  log(arr);
+  let pxDim = 30;
+  let finalMarkup =""
+  arr.forEach((div, index) => {pxDim += 10 * index;
+    let bgColor = getRandomHexColor()
+    let markup = `<div style="background-color:${bgColor}; width:${pxDim}px; height:${pxDim}px"></div>`
+    finalMarkup = `${finalMarkup}+${markup}`
+  });
+  return boxContainer.insertAdjacentHTML('beforeend', finalMarkup)
 };
 const boxDestr = Event => {
   const divs = boxContainer.querySelectorAll('div');
@@ -33,5 +42,5 @@ const boxDestr = Event => {
 };
 
 //Event
-btnCreate.addEventListener('click', createBoxes(input.valueAsNumber));
-// btnDestr.addEventListener('click', boxDestr);
+btnCreate.addEventListener('click', createBoxes);
+btnDestr.addEventListener('click', log(input.valueAsNumber));

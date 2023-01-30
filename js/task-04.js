@@ -22,15 +22,15 @@ const counterDiv = document.querySelector('#counter');
 log(counterDiv);
 const counterDivArr = counterDiv.children;
 log(counterDivArr);
-const btnDec = counterDivArr[0];
-log(btnDec);
-const btnInc = counterDivArr[2];
-log(btnInc);
+// const btnDec = counterDivArr[0];
+// log(btnDec);
+// const btnInc = counterDivArr[2];
+// log(btnInc);
 
 //SECOND WAY OF DOM TARGETING
-// const btnPlus = document.querySelector('button[data-action="decrement"]');
-// log(btnPlus);
-// const btnMinus = document.querySelector('button[data-action="increment"]');
+const btnDec = document.querySelector('button[data-action="decrement"]');
+
+const btnInc = document.querySelector('button[data-action="increment"]');
 
 //callbacks
 const display = () => (counterDisplay.innerHTML = counterValue);
