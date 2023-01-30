@@ -13,7 +13,7 @@ log(btnChange);
 const colorDisplay = document.querySelector('.color');
 
 //callback/functions
-const colorChange = Event => {
+const colorChange = () => {
   document.body.style.backgroundColor = `${getRandomHexColor()}`;
   colorDisplay.innerHTML = document.body.style.backgroundColor;
 };
