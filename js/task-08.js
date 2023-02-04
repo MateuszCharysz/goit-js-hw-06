@@ -21,7 +21,8 @@ const handleSubmit = Event => {
   } else {
     loginData.email = email.value;
     loginData.password = password.value;
-    return log(loginData);
+    log(loginData);
+    form.reset();
   }
 };
 

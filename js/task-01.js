@@ -18,7 +18,7 @@ const categoryNumberSelector = categoriesList.querySelectorAll('li.item');
 const numberOfCategories = () => {
   let number = categoryNumberSelector.length;
   let messege = `Number of categories: ${number}`;
-  return console.log(messege);
+  return messege;
 };
 
 const namesAndElements = () => {

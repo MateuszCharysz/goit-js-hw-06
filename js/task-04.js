@@ -36,12 +36,12 @@ const btnInc = document.querySelector('button[data-action="increment"]');
 const display = () => (counterDisplay.innerHTML = counterValue);
 const increment = Event => {
   counterValue++;
-  log(counterValue);
+  // log(counterValue);
   return display();
 };
 const decrement = Event => {
   counterValue = counterValue - 1;
-  log(counterValue);
+  // log(counterValue);
   return display();
 };
 
