@@ -37,12 +37,12 @@ const display = () => (counterDisplay.innerHTML = counterValue);
 const increment = Event => {
   counterValue++;
   // log(counterValue);
-  return display();
+  display();
 };
 const decrement = Event => {
-  counterValue = counterValue - 1;
+  counterValue--;
   // log(counterValue);
-  return display();
+  display();
 };
 
 // Event listeners
